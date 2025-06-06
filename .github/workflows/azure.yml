@@ -26,7 +26,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "cekfakta-ai-demo" # Ganti sesuai nama App Service kamu
-          slot-name: "production"
+          app-name:
+          slot-name:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: .
