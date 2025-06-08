@@ -1,0 +1,21 @@
+7c741099-329e-466a-92b1-c22c0207b147
+
+PS C:\WINDOWS\system32> az ad sp create-for-rbac --name "gh-deploy-cekfakta-ai-app" --role contributor --scopes /subscriptions/7c741099-329e-466a-92b1-c22c0207b147/resourceGroups/CekFaktaResourceGroup --sdk-auth
+Option '--sdk-auth' has been deprecated and will be removed in a future release.
+Found an existing application instance: (id) 32df67c1-a87e-4dd4-9d5a-eabb7dbd0694. We will patch it.
+Creating 'contributor' role assignment under scope '/subscriptions/7c741099-329e-466a-92b1-c22c0207b147/resourceGroups/CekFaktaResourceGroup'
+  Role assignment already exists.
+
+The output includes credentials that you must protect. Be sure that you do not include these credentials in your code or check the credentials into your source control. For more information, see https://aka.ms/azadsp-cli
+{
+  "clientId": "33b25fc9-b496-4d3e-8555-4d132124daa4",
+  "clientSecret": "1LY8Q~NOwIjm1NyU6faP~1Q4VhSzwsHDK1an6a.0",
+  "subscriptionId": "7c741099-329e-466a-92b1-c22c0207b147",
+  "tenantId": "8318e236-6304-418e-a96c-56adc998f480",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
