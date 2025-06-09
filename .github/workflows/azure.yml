@@ -34,3 +34,7 @@ jobs:
           app-name: "cekfakta-ai-app"
           slot-name: "production"
           package: .
+
+      - name: Install dependencies into wwwroot
+        run: |
+          pip install --target=. -r requirements.txt
