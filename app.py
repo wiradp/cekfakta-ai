@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 CORS(app)  # agar frontend bisa akses dari file lokal
 
 # Load model dan vectorizer
@@ -18,6 +19,11 @@ def get_explanation(label):
         "aman": "Tidak terdeteksi sebagai pesan berbahaya. Tetap waspada."
     }
     return explanations.get(label, "Tidak ada penjelasan.")
+
+# 👇 ROUTE "/" → serve index.html
+@app.route("/")
+def index():
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
