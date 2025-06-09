@@ -1,14 +1,9 @@
-name: Build and deploy Python app to Azure Web App
+name: Azure Web App Deploy
 
 on:
   push:
     branches:
       - main
-
-env:
-  AZURE_WEBAPP_NAME: "cekfakta-ai-app"
-  AZURE_RESOURCE_GROUP: "CekFaktaResourceGroup"
-  PYTHON_VERSION: "3.10"
 
 jobs:
   build-and-deploy:
@@ -18,23 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Upload artifacts
-        run: echo "Dependencies installed successfully."
-
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          slot-name: "production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          app-name: "cekfakta-ai-app"
           package: .
