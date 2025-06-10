@@ -1,11 +1,10 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
 import joblib
 
 # Load data dari CSV
-data = pd.read_csv("model/training_data.csv")
+data = pd.read_csv("data/dataset.csv")
 
 # Stopwords bahasa Indonesia sederhana
 indonesian_stop_words = [
