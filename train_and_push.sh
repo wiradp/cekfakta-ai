@@ -1,18 +1,14 @@
 #!/bin/bash
 
-echo "👉 Jalankan training model..."
-python -u model/train_model.py
+echo "Training model..."
+python model/train_model.py
 
-echo "👉 Cek apakah model dan vectorizer sudah update:"
-ls -lh model/*.pkl
+echo "Model training selesai."
 
-echo "👉 Tambahkan model ke Git..."
-git add model/*.pkl
-
-echo "👉 Commit perubahan model..."
-git commit -m "update trained model (auto via train_and_push.sh)"
-
-echo "👉 Push ke GitHub..."
+echo "Commit dan push model ke GitHub..."
+git add model/vectorizer.pkl model/classifier.pkl
+git commit -m "update model"
 git push
 
-echo "✅ Semua selesai. Siap cek di Azure nanti!"
+echo "Done."
+
