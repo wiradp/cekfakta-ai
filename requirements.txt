@@ -4,5 +4,6 @@ scikit-learn==1.0.2
 joblib==1.4.2
 numpy==1.23.5
 scipy==1.9.3
+openai==1.30.1
 
 
