@@ -6,6 +6,3 @@ numpy==1.23.5
 scipy==1.9.3
 openai==1.30.1
 python-dotenv
-
-
-python-dotenv
