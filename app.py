@@ -87,8 +87,16 @@ def predict_gpt():
             temperature=0.3,
             max_tokens=200
         )
-        hasil = response.choices[0].message.content
-        return jsonify({"hasil": hasil})
+        content = response.choices[0].message.content.strip()
+        label, explanation = None, None
+        for line in content.splitlines():
+            if line.lower().startswith("label:"):
+                label = line.split(":", 1)[1].strip().lower()
+            elif line.lower().startswith("penjelasan:"):
+                explanation = line.split(":", 1)[1].strip()
+        if not label:
+            label = "undefined"
+        return jsonify({"label": label, "explanation": explanation})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
