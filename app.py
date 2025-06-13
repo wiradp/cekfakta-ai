@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
-import joblib
-import os
 from dotenv import load_dotenv
 from openai import AzureOpenAI
+import os
+import joblib
 import logging
 
 # ✅ Muat variabel lingkungan dari .env
 load_dotenv()
 
 # ✅ Inisialisasi klien OpenAI
-# (Dihapus karena duplikat dan salah referensi 'openai')
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
+)
+deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 
 # ✅ Inisialisasi Flask
 app = Flask(__name__, static_folder="static")
@@ -29,14 +34,6 @@ def get_explanation(label):
         "aman": "Tidak terdeteksi sebagai pesan berbahaya. Tetap waspada."
     }
     return explanations.get(label, "Tidak ada penjelasan.")
-
-# ✅ Inisialisasi klien Azure OpenAI
-client = AzureOpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
-)
-deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 
 # ✅ Setup logging
 logging.basicConfig(
