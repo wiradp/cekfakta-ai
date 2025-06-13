@@ -10,11 +10,7 @@ import logging
 load_dotenv()
 
 # ✅ Inisialisasi klien OpenAI
-client = openai.AzureOpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
-)
+# (Dihapus karena duplikat dan salah referensi 'openai')
 
 # ✅ Inisialisasi Flask
 app = Flask(__name__, static_folder="static")
@@ -76,9 +72,7 @@ def predict():
 def predict_gpt():
     data = request.get_json()
     text = data.get("text", "")
-    logging.info(f"Request /predict_gpt: {text}")
     if not text:
-        logging.warning("Teks kosong pada /predict_gpt")
         return jsonify({"error": "Teks kosong"}), 400
 
     prompt = (
@@ -89,34 +83,16 @@ def predict_gpt():
 
     try:
         response = client.chat.completions.create(
-            model=deployment_name,
+            model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
             messages=[
-                {"role": "system", "content": "Kamu adalah detektor pesan mencurigakan."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0,
-            max_tokens=100
+            temperature=0.3,
+            max_tokens=200
         )
-        content = response.choices[0].message.content.strip()
-        logging.info(f"Response GPT: {content}")
-        # Parsing label dan penjelasan dari response
-        label, explanation = None, None
-        for line in content.splitlines():
-            if line.lower().startswith("label:"):
-                label = line.split(":", 1)[1].strip().lower()
-                label = label.replace(".", "").replace(":", "").strip()
-            elif line.lower().startswith("penjelasan:"):
-                explanation = line.split(":", 1)[1].strip()
-        if label not in ["penipuan", "judi", "hoax", "aman"]:
-            logging.error(f"Label tidak dikenali: {label}. Jawaban model: {content}")
-            return jsonify({"error": f"Label tidak dikenali: {label}. Jawaban model: {content}"}), 400
-        if not explanation:
-            explanation = "Tidak ada penjelasan dari model."
-        logging.info(f"Prediksi: {label}, Penjelasan: {explanation}")
-        return jsonify({"label": label, "explanation": explanation})
-
+        hasil = response.choices[0].message.content
+        return jsonify({"hasil": hasil})
     except Exception as e:
-        logging.exception("Error pada /predict_gpt")
         return jsonify({"error": str(e)}), 500
 
 # ✅ Run server
