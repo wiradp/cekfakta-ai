@@ -1,0 +1,66 @@
+2025-06-13 08:01:27,246 [WARNING]  * Debugger is active!
+2025-06-13 08:01:27,269 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 08:01:33,574 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 08:01:33,587 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 08:01:38,570 [WARNING]  * Debugger is active!
+2025-06-13 08:01:38,603 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 08:01:43,277 [INFO] 127.0.0.1 - - [13/Jun/2025 08:01:43] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 08:01:44,707 [INFO] 127.0.0.1 - - [13/Jun/2025 08:01:44] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 08:01:57,619 [INFO] Request /predict_gpt: beli rumah berhadiah mobil
+2025-06-13 08:02:01,317 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 08:02:01,317 [INFO] Response GPT: Label: penipuan
+Penjelasan: Teks tersebut menawarkan hadiah yang terlalu bagus untuk menjadi kenyataan, yang sering digunakan dalam skema penipuan untuk menarik perhatian dan memikat korban agar melakukan pembelian atau memberikan informasi pribadi.
+2025-06-13 08:02:01,317 [INFO] Prediksi: penipuan, Penjelasan: Teks tersebut menawarkan hadiah yang terlalu bagus untuk menjadi kenyataan, yang sering digunakan dalam skema penipuan untuk menarik perhatian dan memikat korban agar melakukan pembelian atau memberikan informasi pribadi.
+2025-06-13 08:02:01,317 [INFO] 127.0.0.1 - - [13/Jun/2025 08:02:01] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 08:03:23,706 [INFO]  * Detected change in 'C:\\Users\\wirad\\anaconda3\\Lib\\logging\\__init__.py', reloading
+2025-06-13 08:03:28,908 [WARNING]  * Debugger is active!
+2025-06-13 08:03:28,934 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 11:00:46,964 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.33.134:8000
+2025-06-13 11:00:46,966 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-13 11:00:46,999 [INFO]  * Restarting with watchdog (windowsapi)
+2025-06-13 11:00:49,986 [WARNING]  * Debugger is active!
+2025-06-13 11:00:50,029 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 11:01:00,050 [INFO] 127.0.0.1 - - [13/Jun/2025 11:01:00] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 11:01:02,361 [INFO] 127.0.0.1 - - [13/Jun/2025 11:01:02] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 11:01:20,007 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 11:01:20,007 [INFO] 127.0.0.1 - - [13/Jun/2025 11:01:20] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 11:01:22,796 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 429 Too Many Requests"
+2025-06-13 11:01:22,799 [INFO] Retrying request to /chat/completions in 5.000000 seconds
+2025-06-13 11:01:31,323 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 11:01:31,325 [INFO] 127.0.0.1 - - [13/Jun/2025 11:01:31] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 12:42:17,038 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.33.134:8000
+2025-06-13 12:42:17,038 [INFO] [33mPress CTRL+C to quit[0m
+2025-06-13 12:42:17,062 [INFO]  * Restarting with watchdog (windowsapi)
+2025-06-13 12:42:19,556 [WARNING]  * Debugger is active!
+2025-06-13 12:42:19,588 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 12:42:23,854 [INFO] 127.0.0.1 - - [13/Jun/2025 12:42:23] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 12:42:25,555 [INFO] 127.0.0.1 - - [13/Jun/2025 12:42:25] "[36mGET / HTTP/1.1[0m" 304 -
+2025-06-13 12:43:29,864 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 12:43:29,864 [INFO] 127.0.0.1 - - [13/Jun/2025 12:43:29] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 12:46:22,619 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:22,761 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:24,592 [INFO]  * Restarting with watchdog (windowsapi)
+2025-06-13 12:46:29,315 [WARNING]  * Debugger is active!
+2025-06-13 12:46:29,349 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 12:46:32,193 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:32,208 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:33,476 [INFO]  * Restarting with watchdog (windowsapi)
+2025-06-13 12:46:36,732 [WARNING]  * Debugger is active!
+2025-06-13 12:46:36,758 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 12:46:40,207 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 12:46:40,222 [INFO] 127.0.0.1 - - [13/Jun/2025 12:46:40] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 12:46:47,883 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:47,883 [INFO]  * Detected change in 'C:\\Project\\CekFakta-AI\\app.py', reloading
+2025-06-13 12:46:49,169 [INFO]  * Restarting with watchdog (windowsapi)
+2025-06-13 12:46:52,070 [WARNING]  * Debugger is active!
+2025-06-13 12:46:52,094 [INFO]  * Debugger PIN: 106-282-332
+2025-06-13 12:48:37,975 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 12:48:37,993 [INFO] 127.0.0.1 - - [13/Jun/2025 12:48:37] "POST /predict_gpt HTTP/1.1" 200 -
+2025-06-13 12:49:09,383 [INFO] HTTP Request: POST https://wirad-mbrfk3rz-eastus2.openai.azure.com/openai/deployments/cekfakta-gpt/chat/completions?api-version=2024-02-15-preview "HTTP/1.1 200 OK"
+2025-06-13 12:49:09,383 [INFO] 127.0.0.1 - - [13/Jun/2025 12:49:09] "POST /predict_gpt HTTP/1.1" 200 -
