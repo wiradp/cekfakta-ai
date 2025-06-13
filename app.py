@@ -9,6 +9,13 @@ import logging
 # ✅ Muat variabel lingkungan dari .env
 load_dotenv()
 
+# ✅ Inisialisasi klien OpenAI
+client = openai.AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
+)
+
 # ✅ Inisialisasi Flask
 app = Flask(__name__, static_folder="static")
 CORS(app)
